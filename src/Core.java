@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class CoreWithoutInterrupts {
+public class Core {
     //Таблица процессов
     private ArrayList<Process> processArray = new ArrayList<>();
 
@@ -21,7 +21,7 @@ public class CoreWithoutInterrupts {
     private int totalTimeWithoutInterrupts;
     private int totalTimeWithInterrupts;
 
-    public CoreWithoutInterrupts(int numberOfProcesses) {
+    public Core(int numberOfProcesses) {
         this.NUMBER_OF_PROCESSES = numberOfProcesses;
         driver = new Driver();
         processArrayCopy = new ArrayList<>();
