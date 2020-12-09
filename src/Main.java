@@ -1,15 +1,13 @@
 public class Main {
 
     public static void main(String[] args) {
-		CoreWithoutInterrupts coreWithoutInterrupts = new CoreWithoutInterrupts(5);
-		coreWithoutInterrupts.createProcesses();
-		coreWithoutInterrupts.planProcesses();
+		Core core = new Core(5);
+		core.createProcesses();
+		core.planningWithoutInterrupts();
 		System.out.println();
-		CoreWithInterrupts coreWithInterrupts = new CoreWithInterrupts(5);
-		coreWithInterrupts.createProcesses(coreWithoutInterrupts.getProcessArrayCopy());
-		coreWithInterrupts.planProcesses();
+		core.planningWithInterrupts();
 
-		System.out.println("Время, затраченное на планирование процессов без прерываний: " + coreWithoutInterrupts.getTotalTime() + " мс");
-		System.out.println("Время, затраченное на планирование процессов с прерываниями: " + coreWithInterrupts.getTotalTime() + " мс");
+		System.out.println("Время, затраченное на планирование процессов без прерываний: " + core.getTotalTimeWithoutInterrupts() + " мс");
+		System.out.println("Время, затраченное на планирование процессов с прерываниями: " +  core.getTotalTimeWithInterrupts() + " мс");
     }
 }
